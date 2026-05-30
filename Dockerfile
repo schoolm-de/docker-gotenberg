@@ -8,9 +8,15 @@ RUN echo "deb http://deb.debian.org/debian trixie contrib non-free" \
       | debconf-set-selections \
     && apt-get update -qq \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends \
-         ca-certificates \
-         wget \
-         ttf-mscorefonts-installer \
+        ca-certificates \
+        fonts-liberation \
+        fonts-liberation2 \
+        fonts-dejavu-core \
+        fonts-noto-core \
+        fonts-crosextra-caladea \
+        fonts-crosextra-carlito \
+        wget \
+        ttf-mscorefonts-installer \
     && rm -rf /var/lib/apt/lists/*
 
 USER gotenberg
